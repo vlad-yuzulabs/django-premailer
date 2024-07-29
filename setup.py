@@ -13,7 +13,7 @@ except ImportError:
     from setuptools.command.test import test              # noqa
     is_setuptools = False
 except ModuleNotFoundError:
-    raise
+    pass
 
 import os
 import sys
