@@ -5,13 +5,15 @@ try:
     from setuptools import setup, find_packages
     from setuptools.command.test import test
     is_setuptools = True
-except (ImportError, ModuleNotFoundError):
+except ImportError:
     raise
     from ez_setup import use_setuptools
     use_setuptools()
     from setuptools import setup, find_packages           # noqa
     from setuptools.command.test import test              # noqa
     is_setuptools = False
+except ModuleNotFoundError:
+    raise
 
 import os
 import sys
