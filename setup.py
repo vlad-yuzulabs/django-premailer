@@ -5,7 +5,7 @@ try:
     from setuptools import setup, find_packages
     from setuptools.command.test import test
     is_setuptools = True
-except ImportError:
+except (ImportError, ModuleNotFoundError):
     raise
     from ez_setup import use_setuptools
     use_setuptools()
